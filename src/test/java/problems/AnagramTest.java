@@ -7,26 +7,34 @@ import static org.junit.jupiter.api.Assertions.*;
 class AnagramTest {
 
     @Test
-    void shouldReturnFalseWhenTwoStringsWithDifferentLength(){
+    void isAnagram_ReturnFalse_WithDifferentLengths(){
         assertFalse(Anagram.isAnagram("silent", "list"));
     }
 
     @Test
-    void shouldReturnFalseWhenAnyOneStringIsEmpty(){
+    void isAnagram_ReturnFalse_WhenStringIsEmpty(){
         assertFalse(Anagram.isAnagram("", ""));
     }
 
     @Test
-    void shouldReturnFalseWhenAnyOneStringIsNull(){
+    void isAnagram_ReturnFalse_WhenStringIsNull(){
         assertFalse(Anagram.isAnagram(null, ""));
     }
 
     @Test
-    void shouldReturnTrueWhenInputStringsAreAnagram() {
-        assertTrue(Anagram.isAnagram("silent","listen"));
-        assertTrue(Anagram.isAnagram("Silent","Listen"));
-        assertTrue(Anagram.isAnagram("Bored","Robed"));
-        assertTrue(Anagram.isAnagram("Mother In Law", "Hitler Woman"));
+    void isAnagram_ReturnFalse_WhenNotAnagrams(){
+        assertFalse(Anagram.isAnagram("aacc", "ccac"));
+    }
+
+    @Test
+    void isAnagram_ReturnTrue_WhenAnagrams() {
+        assertAll(
+                () -> assertTrue(Anagram.isAnagram2("silent","listen")),
+                () -> assertTrue(Anagram.isAnagram2("Silent","Listen")),
+                () -> assertTrue(Anagram.isAnagram2("Bored","Robed")),
+                () -> assertTrue(Anagram.isAnagram2("Mother In Law", "Hitler Woman"))
+        );
+
     }
 
 }
