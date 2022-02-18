@@ -1,9 +1,9 @@
-package problems;
+package coding.challenges;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static problems.SubstringPermutation.checkInclusion;
+import static coding.challenges.SubstringPermutation.checkInclusion;
 
 class SubstringPermutationTest {
 

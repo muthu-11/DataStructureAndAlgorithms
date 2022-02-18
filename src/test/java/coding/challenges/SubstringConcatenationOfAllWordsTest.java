@@ -1,4 +1,4 @@
-package problems;
+package coding.challenges;
 
 import org.junit.jupiter.api.Test;
 
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static problems.SubstringConcatenationOfAllWords.findSubstring;
+import static coding.challenges.SubstringConcatenationOfAllWords.findSubstring;
 
 class SubstringConcatenationOfAllWordsTest {
 

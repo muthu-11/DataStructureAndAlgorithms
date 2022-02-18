@@ -1,4 +1,4 @@
-package problems;
+package coding.challenges;
 
 import org.junit.jupiter.api.Test;
 

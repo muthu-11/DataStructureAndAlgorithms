@@ -1,4 +1,4 @@
-package problems;
+package coding.challenges;
 
 import org.junit.jupiter.api.Test;
 
@@ -23,7 +23,7 @@ class AnagramTest {
 
     @Test
     void isAnagram_ReturnFalse_WhenNotAnagrams(){
-        assertFalse(Anagram.isAnagram("aacc", "ccac"));
+        assertFalse(Anagram.isAnagram2("aacc", "ccac"));
     }
 
     @Test

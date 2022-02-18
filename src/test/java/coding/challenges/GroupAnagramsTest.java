@@ -1,12 +1,11 @@
-package problems;
+package coding.challenges;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static problems.GroupAnagrams.groupAnagrams;
+import static coding.challenges.GroupAnagrams.groupAnagrams;
 
 class GroupAnagramsTest {
 
