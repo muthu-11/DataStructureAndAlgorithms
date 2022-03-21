@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title></title>
+	<style>
+    .styled-table {
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 0.9em;
+      font-family: sans-serif;
+      min-width: 400px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      width:80%;
+    }
+
+    .styled-table caption {
+  		background: #7DCABA;
+  		/* color: #ffffff; */
+      color: #333333;
+  		padding: 12px 15px;
+  		font-weight: bold;
+  		font-family: Tahoma;
+  		font-size: small;
+  	}
+
+    .styled-table td.key{
+      font-weight:bold;
+      width:20%;
+    }
+
+    .styled-table thead tr {
+        background-color: #009879;
+        color: #ffffff;
+        text-align: left;
+    }
+
+    .styled-table th,
+    .styled-table td {
+        padding: 12px 15px;
+    }
+
+    .styled-table td {
+        color: #666666;
+    }
+
+    .styled-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+    .styled-table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+
+    .styled-table tbody tr:last-of-type {
+        border-bottom: 2px solid #009879;
+    }
+
+		.bordered{
+			border: 1px solid #dddddd;
+			border-top: none;
+			border-bottom: none;
+
+		}
+
+		.bordered caption{
+			border: 1px solid #dddddd;
+			border-bottom: none;
+		}
+
+		.bordered td{
+			border-right: 1px solid #dddddd;
+		}
+
+		.bordered td:last-of-type{
+			border-right: none;
+		}
+
+		.curved-top caption{
+			border-radius: 15px 15px 0 0;
+		}
+
+	</style>
+</head>
+
+<body>
+	<br />
+	<table class="styled-table bordered curved-top">
+		<caption>Objects Migration from - RS_TMO_ASW_DIT_1</caption>
+		<tr>
+			<td class="key">Server Name</td>
+			<td>mwhlmpconv01.amdocs.com </td>
+		</tr>
+		<tr>
+			<td class="key"> Executed By </td>
+			<td> migwrk1 </td>
+		</tr>
+		<tr>
+			<td class="key"> PMIntegrationServiceName </td>
+			<td> RS_TMO_ASW_DIT_1 </td>
+		</tr>
+		<tr>
+			<td class="key"> DomainName </td>
+			<td> Domain_mwhlmpconv01 </td>
+		</tr>
+		<tr>
+			<td class="key"> Repository User </td>
+			<td> mathi </td>
+		</tr>
+		<tr>
+			<td class="key"> Export Folder Name </td>
+			<td> ASW_PREPAID_MIGRATION_DIT1 </td>
+		</tr>
+		<tr>
+			<td class="key"> Start Time </td>
+			<td> 02/02/22 21:20:54 </td>
+		</tr>
+		<tr>
+			<td class="key"> End Time </td>
+			<td> 02/02/22 21:21:24 </td>
+		</tr>
+	</table>
+	<br>
+	<table class="styled-table bordered curved-top">
+		<caption>Object_Export_Status [ 5 Records]</caption>
+    <thead>
+  		<tr>
+  			<th> OBJECT_TYPE </th>
+  			<th> OBJECT_NAME </th>
+  			<th> STATUS </th>
+  			<th> LOOKUP_ISSUE </th>
+  			<th> SRC_TGT_ISSUE </th>
+  		</tr>
+    </thead>
+		<tr>
+			<td>Mapping</td>
+			<td>m_CNV_ADDRESS_DATA</td>
+			<td>Success</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Mapping</td>
+			<td>m_TGT_MPCS_ON_TMO_NW_HIST</td>
+			<td>Success</td>
+			<td>VALIDATE - SRC_ETL_MASTER_CONN</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Mapping</td>
+			<td>m_CBAN_APE1_RATED_EVENT</td>
+			<td>Success</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Mapping</td>
+			<td>m_CNV_MEMO</td>
+			<td>Success</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>Mapping</td>
+			<td>m_TGT_MEMO</td>
+			<td>Success</td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	<br>
+	<table class="styled-table bordered">
+		<caption>Deployment_Instructions [ 2 Records]</caption>
+    <thead>
+      <tr>
+        <th>NO</th>
+        <th>STEP</th>
+        <th>INSTRUCTION</th>
+        <th>COMMAND</th>
+      </tr>
+    </thead>
+		<tr>
+			<td>1</td>
+			<td>Copy Save File</td>
+			<td>Run the command from Target Server</td>
+			<td>scp migwrk1@mwhlmpconv01.amdocs.com:/informatica/migwrk1/infaceserver/server/infa_shared/ObjectMigration/export/020222_212054.tar.gz $PMRootDir/ObjectMigration/import</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Deploy in Target</td>
+			<td>Run the command from Target Server</td>
+			<td>ksh $PMRootDir/Scripts/infa_object_import.ksh 020222_212054.tar.gz</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<br> </body>
+
+</html>
